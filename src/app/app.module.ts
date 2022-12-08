@@ -27,9 +27,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 
+// componentes do projeto
+import { NavComponent } from './components/nav/nav.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -51,15 +55,9 @@ import { MatCardModule } from '@angular/material/card';
     MatTableModule,
     MatIconModule,
     MatListModule,
-    MatCardModule,
-    ToastrModule.forRoot({
-      timeOut: 4000,
-      closeButton: true,
-      progressBar: true
-    }),
-    NgxMaskModule.forRoot()
+    MatCardModule
   ],
-  providers: [AuthInterceptorProvider],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
