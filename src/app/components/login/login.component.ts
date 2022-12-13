@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Login } from 'src/app/models/login';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -17,17 +18,23 @@ export class LoginComponent implements OnInit {
   email = new FormControl(null, Validators.email);
   senha = new FormControl(null, Validators.minLength(3));
 
-  constructor() { }
+  constructor(
+    //private toast: ToastrService,
+    private service: AuthService) { }
 
-  ngOnInit(): void {
-    
+  ngOnInit(): void { }
+
+  logar() {
+    this.service.authenticate(this.login).subscribe(resposta => {
+      'autorizado'
+    })
   }
 
   validarCampos(): boolean {
 
-    if(this.email.valid && this.senha.valid) {
+    if (this.email.valid && this.senha.valid) {
       return true;
-    }else{
+    } else {
       return false;
     }
   }
