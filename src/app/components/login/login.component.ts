@@ -20,9 +20,11 @@ export class LoginComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
   validarCampos(): boolean {
+
     if(this.email.valid && this.senha.valid) {
       return true;
     }else{
