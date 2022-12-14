@@ -46,7 +46,7 @@ export class ChamadoListComponent implements OnInit {
     } else if(status == '1') {
       return 'EM ANDAMENTO'
     } else {
-      return 'ENCERRADO'
+      return 'ENTREGUE'
     }
   }
 

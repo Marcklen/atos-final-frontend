@@ -63,7 +63,7 @@ export class ChamadoUpdateComponent implements OnInit {
 
   update(): void {
     this.chamadoService.update(this.chamado).subscribe(resposta => {
-      this.toastService.success('Chamado atualizado com sucesso', 'Atualizar chamado');
+      this.toastService.success('Pedido atualizado com sucesso', 'Atualizar chamado');
       this.router.navigate(['chamados']);
     }, ex => {
       this.toastService.error(ex.error.error);
@@ -93,7 +93,8 @@ export class ChamadoUpdateComponent implements OnInit {
     } else if(status == '1') {
       return 'EM ANDAMENTO'
     } else {
-      return 'ENCERRADO'
+      return 'ENTREGUE'
+      //verificar se foi entregue ou nao
     }
   }
 
